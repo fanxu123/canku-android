@@ -14,7 +14,7 @@ public class ShopOrder {
     public String shop_id;
     public String shop_name;
     public String time;
-    public int total;
+    public float total;
     public String user_id;
     public String user_name;
 }

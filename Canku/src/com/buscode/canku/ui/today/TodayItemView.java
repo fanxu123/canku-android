@@ -17,9 +17,11 @@ public class TodayItemView extends LinearLayout{
 
     public TodayItemView(Context context) {
         super(context);
+        setOrientation(VERTICAL);
     }
 
     public TodayItemView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setOrientation(VERTICAL);
     }
 }

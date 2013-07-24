@@ -1,20 +1,22 @@
 package com.buscode.canku;
 
 
+import android.annotation.TargetApi;
+import android.os.Build;
+import com.buscode.canku.storage.StorageModule;
 import com.googlecode.androidannotations.annotations.EApplication;
-
+import dagger.ObjectGraph;
+import de.mindpipe.android.logging.log4j.LogConfigurator;
 import org.apache.log4j.Level;
 
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
-import dagger.ObjectGraph;
-import de.mindpipe.android.logging.log4j.LogConfigurator;
-
 /**
  * 程序的Application, 全局唯一
  */
+@TargetApi(Build.VERSION_CODES.BASE)
 @EApplication
 public class MyApp extends android.app.Application {
 
@@ -37,7 +39,8 @@ public class MyApp extends android.app.Application {
 
     protected List<Object> getModules() {
         return Arrays.<Object>asList(
-                new AppModule(this)
+                new AppModule(this),
+                new StorageModule()
         );
     }
 
